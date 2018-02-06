@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OCEO Test Form</title>
+    </head>
+    <body>
+        <fieldset>
+            <form action="/result" method="post">
+                <p>Your Name: <input type="text" name="name"></p>
+                <p>Dojo Location: <select name="location">
+                    <option value="Mountain View">Mountain View</option>
+                    <option value="Burbank">Burbank</option>
+                </select>
+                <p>Favorite Language: <select name="lang">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Swift">Swift</option>
+                </select></p>
+                <p>Comment (optional)</p>
+                <textarea name="comment" rows="8" cols="80"></textarea>
+                <input type="submit">
+            </form>
+        </fieldset>
+    </body>
+</html>
