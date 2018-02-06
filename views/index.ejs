@@ -22,5 +22,23 @@
                 <input type="submit">
             </form>
         </fieldset>
+
+        <fieldset>
+            <form action="/email" method="post">
+                <p>Your Name: <input type="text" name="name"></p>
+                <p>Favorite Agent: <select name="agent">
+                    <option value="Chris">Chris</option>
+                    <option value="Thomas">Thomas</option>
+                </select>
+                <p>Favorite Language: <select name="lang">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Swift">Swift</option>
+                </select></p>
+                <p>Comment (optional)</p>
+                <textarea name="comment" rows="8" cols="80"></textarea>
+                <input type="submit">
+            </form>
+        </fieldset>
     </body>
 </html>
