@@ -1,0 +1,10 @@
+body{
+    background-color: white;
+}
+.jumbotron{
+    background-color: #07BD43;
+}
+#brand-name{
+    /* color: #DD6E34; */
+    color: #07BD43;
+}
