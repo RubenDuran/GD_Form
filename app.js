@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 // redirect bootstrap JS, bootstrap CSS & jQuery
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); 
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 // root route to render the index.ejs view
 app.get('/', function(req, res) {
@@ -36,6 +36,7 @@ app.post('/result', function(req, res) {
 app.post('/email', function(req, res) {
     console.log("POST DATA", req.body);
     var myData = req.body;
+    var emailContent = "<b>New form submission</b><h3>From: " + myData.first_name + " " + myData.last_name + "</h3><p>" + myData.first_name + " can be contacted by email at: <b>" + myData.email + " </b> and would like to visit our <b>" + myData.gridRadios + "</b> location.</p>"
 
     nodemailer.createTestAccount((err, account) => {
 
@@ -53,10 +54,11 @@ app.post('/email', function(req, res) {
         // setup email data with unicode symbols
         let mailOptions = {
             from: '"OCEO TEST" <foo@example.com>', // sender address
-            to: 'foo@example.com', // list of receivers
-            subject: 'Hello', // Subject line
+            to: 'foo2@example.com', // list of receivers
+            subject: 'OCEO Web Form Submission', // Subject line
             text: 'Hello', // plain text body
-            html: '<b>Hello world</b>' // html body
+            // html: '<b>Hello world</b>' // html body
+            html: emailContent // html body
         };
 
         // send mail with defined transport object
@@ -72,7 +74,6 @@ app.post('/email', function(req, res) {
             // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
         });
     });
-
 
     res.render("thanks", {
         myData: myData
