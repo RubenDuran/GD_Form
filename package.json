@@ -18,6 +18,7 @@
     "express-session": "^1.15.6",
     "jquery": "^3.3.1",
     "nodemailer": "^4.4.2",
-    "popper.js": "^1.12.9"
+    "popper.js": "^1.12.9",
+    "winston": "^2.4.0"
   }
 }
